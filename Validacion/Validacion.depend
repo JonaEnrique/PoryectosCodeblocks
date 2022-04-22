@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1649112451 source:c:\users\usuario\desktop\proyectoscodeblocks\validacion\valdiacion.c
+	"Validacion.h"
+	<ctype.h>
+
+1649112585 c:\users\usuario\desktop\proyectoscodeblocks\validacion\validacion.h
+	<stdio.h>
+	<stdlib.h>
+

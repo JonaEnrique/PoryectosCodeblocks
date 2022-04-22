@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1649302209 source:c:\users\usuario\desktop\proyectoscodeblocks\testfecha\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../FechaLib/FechaLib.h"
+	<locale.h>
+	<windows.h>
+	"../Validacion/Validacion.h"
+
+1649618574 c:\users\usuario\desktop\proyectoscodeblocks\fechalib\fechalib.h
+	"../Comun/Comun.h"
+
+1649126844 c:\users\usuario\desktop\proyectoscodeblocks\validacion\validacion.h
+	<stdio.h>
+	<stdlib.h>
+
+1649638675 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+

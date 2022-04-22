@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1648499608 source:c:\users\usuario\desktop\proyectoscodeblocks\rendondeo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

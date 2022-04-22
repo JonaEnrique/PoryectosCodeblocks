@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1649638898 source:c:\users\usuario\desktop\proyectoscodeblocks\vector\vector.c
+	<stdio.h>
+	"Vector.h"
+
+1650066270 c:\users\usuario\desktop\proyectoscodeblocks\vector\vector.h
+	"../Comun/Comun.h"
+
+1649638675 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+

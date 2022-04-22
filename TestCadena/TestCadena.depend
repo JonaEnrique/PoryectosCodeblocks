@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1649971033 source:d:\desktop\testcadena\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../Cadena/Cadena.h"
+
+1649967494 d:\desktop\cadena\cadena.h
+	<ctype.h>
+
+1649980405 source:c:\users\usuario\desktop\proyectoscodeblocks\testcadena\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../Cadena/Cadena.h"
+
+1649976620 c:\users\usuario\desktop\proyectoscodeblocks\cadena\cadena.h
+	<ctype.h>
+

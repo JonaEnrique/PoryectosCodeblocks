@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1648695753 source:c:\users\usuario\desktop\proyectoscodeblocks\seriefibonnacci\main.c
+	<stdio.h>
+	<stdlib.h>
+

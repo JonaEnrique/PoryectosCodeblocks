@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1650292458 source:c:\users\laboratorios\desktop\proyeccodeblocks\archivos\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1650312777 source:d:\desktop\archivos\main.c
+	<stdio.h>
+	<stdlib.h>
+

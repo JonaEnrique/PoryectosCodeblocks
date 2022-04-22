@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1649299304 source:c:\users\usuario\desktop\proyectoscodeblocks\probandovectores\main.c
+	<stdio.h>
+	<stdlib.h>
+

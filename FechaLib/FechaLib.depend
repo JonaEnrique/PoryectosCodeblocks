@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1649301243 source:c:\users\usuario\desktop\proyectoscodeblocks\fechalib\fechalib.c
+	"FechaLib.h"
+
+1649618574 c:\users\usuario\desktop\proyectoscodeblocks\fechalib\fechalib.h
+	"../Comun/Comun.h"
+
+1649618489 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1648524853 source:c:\users\usuario\desktop\proyectoscodeblocks\factoreal\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

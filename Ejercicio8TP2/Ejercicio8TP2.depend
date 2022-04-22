@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1650512431 source:c:\users\usuario\desktop\proyectoscodeblocks\ejercicio8tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Cadena/Cadena.h"
+
+1649976620 c:\users\usuario\desktop\proyectoscodeblocks\cadena\cadena.h
+	<ctype.h>
+

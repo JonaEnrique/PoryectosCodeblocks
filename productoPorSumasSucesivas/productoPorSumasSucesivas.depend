@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1649282342 source:c:\users\usuario\desktop\proyectoscodeblocks\productoporsumassucesivas\main.c
+	<stdio.h>
+	<stdlib.h>
+
