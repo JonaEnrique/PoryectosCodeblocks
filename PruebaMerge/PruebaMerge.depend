@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1650594785 source:c:\users\usuario\desktop\proyectoscodeblocks\pruebamerge\main.c
+1650594972 source:c:\users\usuario\desktop\proyectoscodeblocks\pruebamerge\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

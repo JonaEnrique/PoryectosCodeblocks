@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="Empleados.dat Aumentos.dat" />
+				<Option parameters="Empleados.dat Aumentos.dat arch.temp" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>

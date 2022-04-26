@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1650600400 source:c:\users\usuario\desktop\proyectoscodeblocks\merge\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"../Comun/Comun.h"
+
+1650575076 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+

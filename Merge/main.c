@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
+
 #include "../Comun/Comun.h"
+
+#define ERR_PUNTO 52 // Error de punto
 
 #define PARAM_PRODUTOS     1
 #define PARAM_MOVIMIENTOS  2
@@ -16,18 +20,26 @@ typedef struct
 }
 Producto;
 
-
+int generarProductos(const char* nomArchivoProds);
+int generarMovimientos(const char* nomArchivoMovs);
 int mostrarProductos(const char*nomArch);
 int mostrarMovimientos(const char*nomArch);
-int actulizarProductos(const char*nomProds, const char* nomMovs);
+int actualizarProductos(const char*nomProds, const char* nomMovs);
+int cambiarExtension(const char* nombreOriginal, char* nombreCambiado, const char* extension);
 
 int main(int argc, char* argv[])
 {
+    generarProductos(argv[PARAM_PRODUTOS]);
+    generarMovimientos(argv[PARAM_MOVIMIENTOS]);
+
+    puts("Productos: \n");
     mostrarProductos(argv[PARAM_PRODUTOS]);
-    mostrarMovimientos(argv[PARAM_MOVIMIENTOS]);
+    puts("Movimientos: \n");
+    mostrarProductos(argv[PARAM_MOVIMIENTOS]);
 
-    actulizarProductos(argv[PARAM_PRODUTOS], argv[PARAM_MOVIMIENTOS]);
+    actualizarProductos(argv[PARAM_PRODUTOS], argv[PARAM_MOVIMIENTOS]);
 
+    puts("Productos actualizados: \n");
     mostrarProductos(argv[PARAM_PRODUTOS]);
 
     return 0;
@@ -118,5 +130,139 @@ int actualizarProductos(const char*nomProds, const char* nomMovs)
     return TODO_OK;
 }
 
-int mostrarMovimientos(const char*nomArch);
-int mostrarProductos(const char*nomArch);
+int mostrarProductos(const char*nomArch)
+{
+    FILE* archProds = fopen(nomArch, "rb");
+
+    if(archProds == NULL)
+    {
+        printf("Errore al abrir los archivos.\n");
+        return ERR_ARCHIVO;
+    }
+
+    Producto prod;
+
+    fread(&prod, sizeof(Producto), 1, archProds);
+
+    while(!feof(archProds))
+    {
+        printf("Codigo: %d ", prod.codigo);
+        printf("Nombre: %s ", prod.nombre);
+        printf("Cantidad: %d ", prod.cantidad);
+        printf("Precio: %.2f", prod.precio);
+        printf("\n");
+
+        fread(&prod, sizeof(Producto), 1, archProds);
+    }
+
+    fclose(archProds);
+
+    return TODO_OK;
+}
+
+int generarProductos(const char* nomArchivoProds)
+{
+    FILE* archProds = fopen(nomArchivoProds, "wb");
+
+    if(archProds == NULL)
+    {
+        printf("Errore al abrir los archivos.\n");
+        return ERR_ARCHIVO;
+    }
+
+    Producto prod;
+
+    prod.codigo = 1;
+    strcpy(prod.nombre, "Leche");
+    prod.cantidad = 10;
+    prod.precio = 2.5;
+
+    fwrite(&prod, sizeof(Producto), 1, archProds);
+
+    prod.codigo = 2;
+    strcpy(prod.nombre, "Huevos");
+    prod.cantidad = 20;
+    prod.precio = 1.5;
+
+    fwrite(&prod, sizeof(Producto), 1, archProds);
+
+    prod.codigo = 3;
+    strcpy(prod.nombre, "Pan");
+    prod.cantidad = 30;
+    prod.precio = 1.0;
+
+    fwrite(&prod, sizeof(Producto), 1, archProds);
+
+    prod.codigo = 4;
+    strcpy(prod.nombre, "Aceite");
+    prod.cantidad = 40;
+    prod.precio = 3.5;
+
+    fwrite(&prod, sizeof(Producto), 1, archProds);
+
+    prod.codigo = 5;
+    strcpy(prod.nombre, "Sal");
+    prod.cantidad = 50;
+    prod.precio = 0.5;
+
+    fwrite(&prod, sizeof(Producto), 1, archProds);
+
+    fclose(archProds);
+
+    return TODO_OK;
+}
+
+int generarMovimientos(const char* nomArchivoMovs)
+{
+    FILE* archMovs = fopen(nomArchivoMovs, "wb");
+
+    if(archMovs == NULL)
+    {
+        printf("Errore al abrir los archivos.\n");
+        return ERR_ARCHIVO;
+    }
+
+    Producto mov;
+
+    mov.codigo = 1;
+    mov.cantidad = 10;
+
+    fwrite(&mov, sizeof(Producto), 1, archMovs);
+
+    mov.codigo = 2;
+    mov.cantidad = 20;
+
+    fwrite(&mov, sizeof(Producto), 1, archMovs);
+
+    mov.codigo = 3;
+    mov.cantidad = 30;
+
+    fwrite(&mov, sizeof(Producto), 1, archMovs);
+
+    mov.codigo = 4;
+    mov.cantidad = 40;
+
+    fwrite(&mov, sizeof(Producto), 1, archMovs);
+
+    mov.codigo = 5;
+    mov.cantidad = 50;
+
+    fwrite(&mov, sizeof(Producto), 1, archMovs);
+
+    fclose(archMovs);
+
+    return TODO_OK;
+}
+
+int cambiarExtension(const char* nombreOriginal, char* nombreCambiado, const char* extension)
+{
+    strcpy(nombreCambiado, nombreOriginal);
+    char* punto= strrchr(nombreCambiado, '.');
+
+    if(!punto)
+        return ERR_PUNTO;
+
+    strcpy(punto + 1, extension);
+
+    return TODO_OK;
+}

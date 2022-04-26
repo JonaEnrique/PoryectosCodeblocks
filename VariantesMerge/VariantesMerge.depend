@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1650827617 source:c:\users\jonathan\desktop\variantesmerge\main.c
+	<stdio.h>
+	<stdlib.h>
+
