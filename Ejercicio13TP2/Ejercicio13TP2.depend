@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1651194215 source:c:\users\usuario\desktop\proyectoscodeblocks\ejercicio13tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

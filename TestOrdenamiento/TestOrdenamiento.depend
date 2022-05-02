@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1651193090 source:c:\users\usuario\desktop\proyectoscodeblocks\testordenamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../OrdenamientoGenerico/Ordenamiento.h"
+
+1651154061 c:\users\usuario\desktop\proyectoscodeblocks\ordenamientogenerico\ordenamiento.h
+	<stddef.h>
+

@@ -31,6 +31,8 @@ int generarArchivo(char* nombreArch);
 int mostrarEmpleados(char* nombreArch);
 int mostrarEmpleadosTXT(char* nombreArchTXT, char tipoTxt);
 int actualizarSueldos(char* nombreArch, char* aumento);
+void actualizarSueldosV2(FILE* fp, char* aumento); // Actualiza sueldos desde el medio del archivo?
+int actualizarSueldosConV2(char* nombreArch, char* aumento);
 int binATxt(const char* archOrigen, const char* archDestino, char tipoTxt);
 int txtAbin(const char* archOrigen, const char* archDestino, char tipoTxt);
 int trozarCampos(const char* cadEmpl, Empleado* empl, char tipoTxt);
@@ -41,24 +43,33 @@ int main(int argc, char* argv[])
 //    printf("\nSueldos antes de actualiza: \n");
 //    mostrarEmpleados(argv[1]);
 
-    printf("  Archivo binario original: \n");
-    mostrarEmpleados(NULL);
-    mostrarEmpleados(argv[PARAM_ARCH_EMPL]);
-
-    printf("\n  Archivo binario original a txt: \n");
-    binATxt(argv[PARAM_ARCH_EMPL], argv[PARAM_ARCH_EMPL_BINATXT], argv[PARAM_TIPO_TXT][0]);
-    mostrarEmpleados(NULL);
-    mostrarEmpleadosTXT(argv[PARAM_ARCH_EMPL_BINATXT], argv[PARAM_TIPO_TXT][0]);
-
-    printf("\n  Archivo txt a binario copia: \n");
-    txtAbin(argv[PARAM_ARCH_EMPL_BINATXT], argv[PARAM_ARCH_EMPL_TXTABIN], argv[PARAM_TIPO_TXT][0]);
-    mostrarEmpleados(NULL);
-    mostrarEmpleados(argv[PARAM_ARCH_EMPL_TXTABIN]);
+//    printf("  Archivo binario original: \n");
+//    mostrarEmpleados(NULL);
+//    mostrarEmpleados(argv[PARAM_ARCH_EMPL]);
+//
+//    printf("\n  Archivo binario original a txt: \n");
+//    binATxt(argv[PARAM_ARCH_EMPL], argv[PARAM_ARCH_EMPL_BINATXT], argv[PARAM_TIPO_TXT][0]);
+//    mostrarEmpleados(NULL);
+//    mostrarEmpleadosTXT(argv[PARAM_ARCH_EMPL_BINATXT], argv[PARAM_TIPO_TXT][0]);
+//
+//    printf("\n  Archivo txt a binario copia: \n");
+//    txtAbin(argv[PARAM_ARCH_EMPL_BINATXT], argv[PARAM_ARCH_EMPL_TXTABIN], argv[PARAM_TIPO_TXT][0]);
+//    mostrarEmpleados(NULL);
+//    mostrarEmpleados(argv[PARAM_ARCH_EMPL_TXTABIN]);
 
 //    actualizarSueldos(argv[1], argv[2]);
 //
 //    printf("\nSueldos actualziados: \n");
 //    mostrarEmpleados(argv[1]);
+
+
+    printf("\nSueldos antes de actualiza: \n");
+    mostrarEmpleados(argv[1]);
+
+    actualizarSueldosConV2(argv[1], argv[2]);
+
+    printf("\nSueldos actualziados: \n");
+    mostrarEmpleados(argv[1]);
 
     return 0;
 }
@@ -185,6 +196,51 @@ int actualizarSueldos(char* nombreArch, char* aumento)
     fclose(empleadosA);
 
     return TODO_OK;
+}
+
+int actualizarSueldosConV2(char* nombreArch, char* aumento)
+{
+    FILE* empleadosA = fopen(nombreArch,"r+b");
+
+    if(!empleadosA)
+    {
+        puts("Error absoluto.");
+        return ERR_ARCH;
+    }
+
+    Empleado empl;
+
+    /*Los cuatro primero me los ignora*/
+    fread(&empl, sizeof(Empleado), 1, empleadosA);
+    fread(&empl, sizeof(Empleado), 1, empleadosA);
+    fread(&empl, sizeof(Empleado), 1, empleadosA);
+    fread(&empl, sizeof(Empleado), 1, empleadosA);
+
+    actualizarSueldosV2(empleadosA, aumento);
+
+    fclose(empleadosA);
+
+    return TODO_OK;
+}
+
+void actualizarSueldosV2(FILE* empleadosA, char* aumento)
+{
+    Empleado empl;
+    long posInicial = ftell(empleadosA); // Guarda la posicion de donde este el cursor en main
+
+    fread(&empl, sizeof(Empleado), 1, empleadosA);
+
+    while(!feof(empleadosA))
+    {
+        empl.sueldo += empl.sueldo*(atof(aumento)/100);
+
+        fseek(empleadosA, -(long)sizeof(Empleado), SEEK_CUR);
+        fwrite(&empl, sizeof(Empleado), 1, empleadosA);
+        fseek(empleadosA, 0L, SEEK_CUR);
+        fread(&empl, sizeof(Empleado), 1, empleadosA);
+    }
+
+    fseek(empleadosA, posInicial, SEEK_SET); // Pone el cursor como estaba en main
 }
 
 int binATxt(const char* archOrigen, const char* archDestino, char tipoTxt)
