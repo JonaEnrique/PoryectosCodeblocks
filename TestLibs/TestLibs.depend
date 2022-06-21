@@ -4,3 +4,13 @@
 	<stdlib.h>
 	<math.h>
 
+1654472138 source:e:\proyectoscodeblocks\testlibs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"../Bibliotecas/miString/miString.h"
+
+1654471676 e:\proyectoscodeblocks\bibliotecas\mistring\mistring.h
+	<stdlib.h>
+	<stddef.h>
+

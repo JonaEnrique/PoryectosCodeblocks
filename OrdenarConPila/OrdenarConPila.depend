@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1651529294 source:c:\users\usuario\desktop\proyectoscodeblocks\ordenarconpila\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../TDAPilaImplEstatica/TDAPilaImplEstatica.h"
+
+1651527191 c:\users\usuario\desktop\proyectoscodeblocks\tdapilaimplestatica\tdapilaimplestatica.h
+	<stddef.h>
+	<string.h>
+	"../Comun/Comun.h"
+
+1651525386 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+
+1652200769 source:c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\ordenarconpila\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../TDAPila/TDAPila.h"
+
+1651758638 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdapilaimplestatica\tdapilaimplestatica.h
+
+1651525386 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\comun\comun.h
+
+1652106125 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdapila\tdapila.h
+	<stddef.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../TDAPilaImplEstatica/TDAPilaImplEstatica.h"
+	"../TDAPilaImplDinamica/TDAPilaImplDinamica.h"
+
+1652104547 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdapilaimpldinamica\tdapilaimpldinamica.h
+

@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1653766484 source:c:\users\usuario\desktop\proyectoscodeblocks\testcola\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../TDACola/TDACola.h"
+
+1653752735 c:\users\usuario\desktop\proyectoscodeblocks\tdacola\tdacola.h
+	<stddef.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../TDAColaImplEstatica/TDAColaImplEstatica.h"
+	"../TDAColaImplDinamica/TDAColaImplDinamica.h"
+
+1653755819 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+
+1652641883 c:\users\usuario\desktop\proyectoscodeblocks\tdacolaimplestatica\tdacolaimplestatica.h
+	<stddef.h>
+
+1653762615 c:\users\usuario\desktop\proyectoscodeblocks\tdacolaimpldinamica\tdacolaimpldinamica.h
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../Nodo/Nodo.h"
+
+1653762590 c:\users\usuario\desktop\proyectoscodeblocks\nodo\nodo.h
+	<stddef.h>
+
+1653766603 source:c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\testcola\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../TDACola/TDACola.h"
+
+1653752735 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdacola\tdacola.h
+	<stddef.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../TDAColaImplEstatica/TDAColaImplEstatica.h"
+	"../TDAColaImplDinamica/TDAColaImplDinamica.h"
+
+1653755819 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\comun\comun.h
+
+1652641883 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdacolaimplestatica\tdacolaimplestatica.h
+	<stddef.h>
+
+1653762615 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdacolaimpldinamica\tdacolaimpldinamica.h
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../Nodo/Nodo.h"
+
+1653762590 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\nodo\nodo.h
+	<stddef.h>
+

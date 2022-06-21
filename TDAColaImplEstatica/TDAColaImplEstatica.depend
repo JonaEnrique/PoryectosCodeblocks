@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1652641826 source:e:\proyectoscodeblocks\tdacolaimplestatica\tdacolaimplestatica.c
+	"../TDACola/TDACola.h"
+
+1652635817 e:\proyectoscodeblocks\tdacola\tdacola.h
+	<stddef.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../TDAColaImplEstatica/TDAColaImplEstatica.h"
+	"../TDAColaImplDinamica/TDAColaImplDinamica.h"
+
+1651525386 e:\proyectoscodeblocks\comun\comun.h
+
+1652641883 e:\proyectoscodeblocks\tdacolaimplestatica\tdacolaimplestatica.h
+	<stddef.h>
+

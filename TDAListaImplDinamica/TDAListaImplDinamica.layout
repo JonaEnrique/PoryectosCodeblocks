@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="TDAListaImplDinamica.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="TDAListaImplDinamica.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="458" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="7" />
+			<Collapse line="12" />
+			<Collapse line="60" />
+			<Collapse line="76" />
+			<Collapse line="92" />
+			<Collapse line="108" />
+			<Collapse line="130" />
+			<Collapse line="152" />
+			<Collapse line="165" />
+			<Collapse line="181" />
+		</Folding>
+	</File>
+	<File name="..\TDALista\TDALista.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="601" topLine="15" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

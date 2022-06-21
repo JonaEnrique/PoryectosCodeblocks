@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1655847939 source:c:\users\usuario\desktop\proyectoscodeblocks\testarbol\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../TDAArbol/TDAArbol.h"
+
+1655771394 c:\users\usuario\desktop\proyectoscodeblocks\tdaarbol\tdaarbol.h
+	<stddef.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+
+1655763756 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+
+1655443815 c:\users\usuario\desktop\proyectoscodeblocks\tdaarbolimpldinamica\tdaarbolimpldinamica.h
+	"../Nodo/NodoA.h"
+
+1655739229 c:\users\usuario\desktop\proyectoscodeblocks\nodo\nodoa.h
+	<stddef.h>
+

@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1654299564 source:e:\proyectoscodeblocks\fusionarduplicadoslista\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../TDALista/TDALista.h"
+	"../Bibliotecas/miString/miString.h"
+
+1654194542 e:\proyectoscodeblocks\tdalista\tdalista.h
+	"../Comun/Comun.h"
+	"../TDAListaImplEstatica/TDAListaImplEstatica.h"
+	"../TDAListaImplDinamica/TDAListaImplDinamica.h"
+
+1654127134 e:\proyectoscodeblocks\comun\comun.h
+
+1653703296 e:\proyectoscodeblocks\tdalistaimpldinamica\tdalistaimpldinamica.h
+	"../Nodo/Nodo.h"
+
+1653854773 e:\proyectoscodeblocks\nodo\nodo.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
+1654299448 e:\proyectoscodeblocks\bibliotecas\mistring\mistring.h
+

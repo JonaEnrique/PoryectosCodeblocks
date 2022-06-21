@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "comun.h": "c"
-    }
+        "comun.h": "c",
+        "tdapilaimplestatica.h": "c",
+        "tdapilaimpldinamica.h": "c",
+        "stddef.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }

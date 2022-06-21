@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1652229247 source:c:\users\usuario\desktop\proyectoscodeblocks\ejercicio4tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../TDAPila/TDAPila.h"
+
+1651758638 c:\users\usuario\desktop\proyectoscodeblocks\tdapilaimplestatica\tdapilaimplestatica.h
+
+1651525386 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+
+1652106125 c:\users\usuario\desktop\proyectoscodeblocks\tdapila\tdapila.h
+	<stddef.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../TDAPilaImplEstatica/TDAPilaImplEstatica.h"
+	"../TDAPilaImplDinamica/TDAPilaImplDinamica.h"
+
+1652104547 c:\users\usuario\desktop\proyectoscodeblocks\tdapilaimpldinamica\tdapilaimpldinamica.h
+

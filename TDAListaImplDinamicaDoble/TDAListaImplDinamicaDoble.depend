@@ -1,0 +1,77 @@
+# depslib dependency file v1.0
+1655349855 source:c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.c
+	"../TDALista/TDALista.h"
+
+1655349855 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdalista\tdalista.h
+	"../Comun/Comun.h"
+	"../TDAListaImplEstatica/TDAListaImplEstatica.h"
+	"../TDAListaImplDinamica/TDAListaImplDinamica.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+
+1654127134 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\comun\comun.h
+
+1653703296 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdalistaimpldinamica\tdalistaimpldinamica.h
+	"../Nodo/Nodo.h"
+
+1653854773 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\nodo\nodo.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
+1655345678 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1655159998 c:\users\jonathan\desktop\proyectoscodeblocksnoteook\proyectoscodeblocks\nodo\nodod.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
+1655420327 source:c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.c
+	"../TDALista/TDALista.h"
+
+1655416092 c:\users\usuario\desktop\proyectoscodeblocks\tdalista\tdalista.h
+	"../Comun/Comun.h"
+	"../TDAListaImplEstatica/TDAListaImplEstatica.h"
+	"../TDAListaImplDinamica/TDAListaImplDinamica.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+
+1655763756 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+
+1653703296 c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamica\tdalistaimpldinamica.h
+	"../Nodo/Nodo.h"
+
+1655350730 c:\users\usuario\desktop\proyectoscodeblocks\nodo\nodo.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
+1655415864 c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1655350747 c:\users\usuario\desktop\proyectoscodeblocks\nodo\nodod.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
+1655837162 source:e:\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.c
+	"../TDALista/TDALista.h"
+	<string.h>
+
+1655416092 e:\proyectoscodeblocks\tdalista\tdalista.h
+	"../Comun/Comun.h"
+	"../TDAListaImplEstatica/TDAListaImplEstatica.h"
+	"../TDAListaImplDinamica/TDAListaImplDinamica.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+
+1655763756 e:\proyectoscodeblocks\comun\comun.h
+
+1653703296 e:\proyectoscodeblocks\tdalistaimpldinamica\tdalistaimpldinamica.h
+	"../Nodo/Nodo.h"
+
+1655350730 e:\proyectoscodeblocks\nodo\nodo.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
+1655415864 e:\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1655350747 e:\proyectoscodeblocks\nodo\nodod.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
