@@ -1,6 +1,7 @@
 #define TDA_LISTA_IMPL_DINAMICA_DOBLE
 #include "../TDALista/TDALista.h"
 #include <string.h>
+#include <stdlib.h>
 
 void crearLista(Lista* pl)
 {
@@ -320,21 +321,22 @@ booleano eliminarDeListaDesordPorValor(Lista* pl, void* elem, size_t tamElem, Cm
     return TODO_OK;
 }
 
-//void recorrerLista(Lista* pl, Accion accion, void* datosAccion)
-//{
-//    NodoD* act = *pl;
-//
-//    if(!*pl)
-//        return;
-//
-//    while(act->ant)
-//        act = act->ant;
-//
-//    while(act)
-//    {
-//        accion(&act->elem, datosAccion);
-//    }
-//}
+void recorrerLista(Lista* pl, Accion accion, void* datosAccion)
+{
+    if(!*pl)
+        return;
+
+    NodoD* act = *pl;
+
+    while(act->ant)
+        act = act->ant;
+
+    while(act)
+    {
+        accion(act->elem, datosAccion);
+        act = act->sig;
+    }
+}
 
 booleano eliminarDeListaPrimero(Lista *pl, void* elem, size_t tamElem)
 {
@@ -361,6 +363,87 @@ booleano eliminarDeListaPrimero(Lista *pl, void* elem, size_t tamElem)
     destruirNodoD(nae, elem, tamElem);
 
     return VERDADERO;
+}
+
+int eliminarDeListaOrdDuplicados(Lista* pl, Cmp cmp, Actualizar actualizar)
+{
+    if(!*pl)
+        return FALSO;
+
+    NodoD* naeAct = *pl, * naeDup;
+
+    while(naeAct->ant)
+        naeAct = naeAct->ant;
+
+    naeDup = naeAct->sig;
+
+    while(naeAct && naeDup)
+    {
+        while(naeDup && cmp(naeAct->elem, naeDup->elem) == 0)
+        {
+            if(actualizar)
+                actualizar(naeAct->elem, naeDup->elem);
+
+            if(naeDup->sig)
+                naeDup->sig->ant = naeDup->ant;
+
+            if(naeDup->ant)
+                naeDup->ant->sig = naeDup->sig;
+
+            if(*pl == naeDup)
+            {
+                if(naeDup->sig)
+                    *pl = naeDup->sig;
+                else
+                    *pl = naeDup->ant;
+            }
+
+            free(naeDup->elem);
+            free(naeDup);
+
+            naeDup = naeAct->sig;
+        }
+
+        naeAct = naeDup;
+        naeDup = naeDup->sig;
+    }
+
+    return VERDADERO;
+//    if(!*pl) // No hay nodos
+//        return FALSO;
+//
+//    NodoD* nae = *pl, * dup = NULL;
+//
+//    while(nae->ant) // Llevo al principio nae
+//        nae = nae->ant;
+//
+//    if(!nae->sig) // Un solo nodo
+//        return FALSO;
+//
+//    dup = nae->sig;
+//
+//    while(nae)
+//    {
+//        while(dup && cmp(dup->elem, nae->elem) == 0)
+//        {
+//            if(actualizar)
+//                actualizar(nae->elem, dup->elem);
+//
+//            if(dup->sig)
+//                dup->sig->ant = dup->ant;
+//
+//            if(dup->ant)
+//                dup->ant->sig = dup->sig;
+//
+//            destruirNodoSinGuardarD(dup);
+//
+//            dup = nae->sig;
+//        }
+//
+//        nae = nae->sig;
+//    }
+//
+//    return VERDADERO;
 }
 
 booleano buscarEnListaOrd(Lista* pl, void* elem, size_t tamElem, Cmp cmp)

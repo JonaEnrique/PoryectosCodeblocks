@@ -26,7 +26,7 @@
 	"../Comun/Comun.h"
 	<stddef.h>
 
-1655420358 source:c:\users\usuario\desktop\proyectoscodeblocks\testlistadoble\main.c
+1656018716 source:c:\users\usuario\desktop\proyectoscodeblocks\testlistadoble\main.c
 	<stdio.h>
 	<stdlib.h>
 	"../TDALista/TDALista.h"
@@ -37,7 +37,7 @@
 	"../TDAListaImplDinamica/TDAListaImplDinamica.h"
 	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
 
-1654127134 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
+1655763756 c:\users\usuario\desktop\proyectoscodeblocks\comun\comun.h
 
 1653703296 c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamica\tdalistaimpldinamica.h
 	"../Nodo/Nodo.h"
@@ -53,7 +53,7 @@
 	"../Comun/Comun.h"
 	<stddef.h>
 
-1655837410 source:e:\proyectoscodeblocks\testlistadoble\main.c
+1655924713 source:e:\proyectoscodeblocks\testlistadoble\main.c
 	<stdio.h>
 	<stdlib.h>
 	"../TDALista/TDALista.h"

@@ -1,10 +1,12 @@
 # depslib dependency file v1.0
-1655780173 source:c:\users\usuario\desktop\proyectoscodeblocks\tdaarbolimpldinamica\tdaarbolimpldinamica.c
+1656093124 source:c:\users\usuario\desktop\proyectoscodeblocks\tdaarbolimpldinamica\tdaarbolimpldinamica.c
 	"../Comun/Comun.h"
 	"../TDAArbol/TDAArbol.h"
-	"stdlib.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
 
-1655771394 c:\users\usuario\desktop\proyectoscodeblocks\tdaarbol\tdaarbol.h
+1655850912 c:\users\usuario\desktop\proyectoscodeblocks\tdaarbol\tdaarbol.h
 	<stddef.h>
 	<string.h>
 	"../Comun/Comun.h"

@@ -7,6 +7,7 @@
 #define TAM_VEC 14
 
 int cmpInt(const void* num1, const void* num2);
+void mostrarEntero(void* elem, void* datos);
 
 int main()
 {
@@ -17,10 +18,12 @@ int main()
     crearLista(&listaDoblePrueba);
 
     for(int i = 0; i < TAM_VEC; i++)
-        insertarEnListaOrdAscSinDupl(&listaDoblePrueba, &v[i], sizeof(int), cmpInt);
+        insertarEnListaOrdAscConDupl(&listaDoblePrueba, &v[i], sizeof(int), cmpInt);
+
+    eliminarDeListaOrdDuplicados(&listaDoblePrueba, cmpInt, NULL);
 
     //eliminarDeListaOrdPorValor(&listaDoblePrueba, &elem, sizeof(int), cmpInt);
-    eliminarDeListaDesordPorValor(&listaDoblePrueba, &elem, sizeof(int), cmpInt);
+    //eliminarDeListaDesordPorValor(&listaDoblePrueba, &elem, sizeof(int), cmpInt);
 
 //    elem = 31;
 //
@@ -29,9 +32,12 @@ int main()
 //    verPrimeroDeLista(&listaDoblePrueba, &elem, sizeof(int));
 //    printf("\nPrimero de lista: %d\n", elem);
 
-    elem = 10;
-    printf("\n%s: %d\n", buscarEnListaOrd(&listaDoblePrueba, &elem, sizeof(int), cmpInt) ? "Encontrado" : "No encontrado", elem);
+//    elem = 10;
+//    printf("\n%s: %d\n", buscarEnListaOrd(&listaDoblePrueba, &elem, sizeof(int), cmpInt) ? "Encontrado" : "No encontrado", elem);
 
+
+    recorrerLista(&listaDoblePrueba, mostrarEntero, NULL);
+    putchar('\n');
 
     while(!listaVacia(&listaDoblePrueba))
     {
@@ -39,7 +45,7 @@ int main()
         printf("%d ", elem);
     }
 
-    printf("\n%s: %d\n", buscarEnListaDesord(&listaDoblePrueba, &elem, sizeof(int), cmpInt) ? "Encontrado" : "No encontrado", elem);
+    //printf("\n%s: %d\n", buscarEnListaDesord(&listaDoblePrueba, &elem, sizeof(int), cmpInt) ? "Encontrado" : "No encontrado", elem);
 
     return 0;
 }
@@ -47,4 +53,9 @@ int main()
 int cmpInt(const void* num1, const void* num2)
 {
     return *((int*)num1) - *((int*)num2);
+}
+
+void mostrarEntero(void* elem, void* datos)
+{
+    printf("%d ", *((int*)elem));
 }

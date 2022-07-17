@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1655847939 source:c:\users\usuario\desktop\proyectoscodeblocks\testarbol\main.c
+1656100967 source:c:\users\usuario\desktop\proyectoscodeblocks\testarbol\main.c
 	<stdio.h>
 	<stdlib.h>
 	"../TDAArbol/TDAArbol.h"
+	"../TDALista/TDALista.h"
 
-1655771394 c:\users\usuario\desktop\proyectoscodeblocks\tdaarbol\tdaarbol.h
+1655850912 c:\users\usuario\desktop\proyectoscodeblocks\tdaarbol\tdaarbol.h
 	<stddef.h>
 	<string.h>
 	"../Comun/Comun.h"
@@ -16,5 +17,25 @@
 	"../Nodo/NodoA.h"
 
 1655739229 c:\users\usuario\desktop\proyectoscodeblocks\nodo\nodoa.h
+	<stddef.h>
+
+1655416092 c:\users\usuario\desktop\proyectoscodeblocks\tdalista\tdalista.h
+	"../Comun/Comun.h"
+	"../TDAListaImplEstatica/TDAListaImplEstatica.h"
+	"../TDAListaImplDinamica/TDAListaImplDinamica.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+
+1653703296 c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamica\tdalistaimpldinamica.h
+	"../Nodo/Nodo.h"
+
+1655350730 c:\users\usuario\desktop\proyectoscodeblocks\nodo\nodo.h
+	"../Comun/Comun.h"
+	<stddef.h>
+
+1655415864 c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1655350747 c:\users\usuario\desktop\proyectoscodeblocks\nodo\nodod.h
+	"../Comun/Comun.h"
 	<stddef.h>
 

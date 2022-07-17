@@ -31,5 +31,6 @@ booleano esArbolBalanceado(const Arbol* pa); // Completo hasta el penultimo nive
 booleano esArbolAVL(const Arbol* pa);
 TipoArbol tipoArbol(const Arbol* pa);
 void imprimirArbol(const Arbol* pa, ImprimirElemArbol accion, void* datosImprimir);
+int cargarArbolDeArchivoOrdenado(Arbol* pa, const char* nombreArchivo, size_t tamElem, Cmp cmp);
 
 #endif // TDAARBOL_H

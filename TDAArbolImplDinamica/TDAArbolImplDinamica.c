@@ -1,13 +1,20 @@
 #include "../Comun/Comun.h"
 #define TDA_ARBOL_IMPL_DINAMICA
 #include "../TDAArbol/TDAArbol.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 void imprimirArbolRec(const Arbol* pa, ImprimirElemArbol imprimir, void* datosImprimir, int nivel);
 const Arbol* buscarRaizArbol(const Arbol* pa, void* elem, Cmp cmp);
 void eliminarRaizArbol(Arbol* pae);
+
 Arbol* menorDeArbol(Arbol* pa);
 Arbol* mayorDeArbol(Arbol* pa);
+
+int cargarArbolRec(FILE* arch, Arbol* pa, size_t tamElem, Cmp cmp, int li, int ls);
+
+int contarNodos(const Arbol* pa); // El usuario no se relaciona con los nodos
 
 void crearArbol(Arbol* pa)
 {
@@ -60,7 +67,22 @@ int insertarEnArbol(Arbol* pa, void* elem, size_t tamElem, Cmp cmp, Actualizar a
     return !*pa? SIN_MEM : TODO_OK;
 */
 }
-booleano buscarEnArbol(Arbol* pa, void* elem, size_t tamElem, Cmp cmp);
+
+booleano buscarEnArbol(Arbol* pa, void* elem, size_t tamElem, Cmp cmp)
+{
+    if(!*pa)
+        return FALSO;
+
+    int comp = cmp(elem, (*pa)->elem);
+
+    if(comp == 0)
+    {
+        memcpy(elem, (*pa)->elem, min(tamElem, (*pa)->tamElem));
+        return VERDADERO;
+    }
+
+    return buscarEnArbol(comp > 0 ? &(*pa)->hIzq : &(*pa)->hDer, elem, tamElem, cmp);
+}
 
 booleano eliminarDeArbol(Arbol* pa, void* elem, size_t tamElem, Cmp cmp)
 {
@@ -170,8 +192,33 @@ void recorrerArbolPos(Arbol* pa, Accion accion, void* datosAccion)
     accion((*pa)->elem, datosAccion);
 }
 
-void vaciarArbol(Arbol* pa);
-booleano esArbolCompleto(const Arbol* pa); // Completo hasta el ultimo nivel
+void vaciarArbol(Arbol* pa)
+{
+    if(!*pa)
+        return;
+
+    vaciarArbol(&(*pa)->hIzq);
+    vaciarArbol(&(*pa)->hDer);
+    free((*pa)->elem);
+    free(*pa);
+    *pa = NULL;
+}
+booleano esArbolCompleto(const Arbol* pa) // Completo hasta el ultimo nivel
+{
+    int cantNodosArbolEsperada = pow(2, alturaArbol((Arbol*)pa)) - 1;
+    int cantNodosArbolReal = contarNodos(pa);
+
+    return cantNodosArbolEsperada == cantNodosArbolReal;
+}
+
+int contarNodos(const Arbol* pa)
+{
+    if(!*pa) // Cuando encuentre un hijo sin arbol, retorna 0 nodos -> NULL
+        return 0;
+
+    return contarNodos(&(*pa)->hIzq) + contarNodos(&(*pa)->hDer) + 1; // Suma de nodos de hijo derecho e izquierdo y se le suma la misma raiz que es otro nodo
+}
+
 booleano esArbolBalanceado(const Arbol* pa); // Completo hasta el penultimo nivel
 booleano esArbolAVL(const Arbol* pa);
 TipoArbol tipoArbol(const Arbol* pa);
@@ -189,6 +236,50 @@ void imprimirArbolRec(const Arbol* pa, ImprimirElemArbol imprimir, void* datosIm
     imprimirArbolRec(&(*pa)->hDer, imprimir, datosImprimir, nivel + 1);
     imprimir((*pa)->elem, datosImprimir, nivel);
     imprimirArbolRec(&(*pa)->hIzq, imprimir, datosImprimir, nivel + 1);
+}
+
+int cargarArbolDeArchivoOrdenado(Arbol* pa, const char* nombreArchivo, size_t tamElem, Cmp cmp)
+{
+    FILE* arch = fopen(nombreArchivo, "rb");
+
+    if(!arch)
+    {
+        fclose(arch);
+        return SIN_MEM;
+    }
+
+    fseek(arch, 0L, SEEK_END);
+
+    int cantReg = ftell(arch) / tamElem;
+
+    cargarArbolRec(arch, pa, tamElem, cmp, 0 /* li */, cantReg -1 /* ls */);
+
+    fclose(arch);
+
+    return TODO_OK;
+}
+
+int cargarArbolRec(FILE* arch, Arbol* pa, size_t tamElem, Cmp cmp, int li, int ls)
+{
+    if(li > ls)
+        return TODO_OK;
+
+    void* reg = malloc(tamElem);
+
+    int m = (li + ls) / 2;
+
+    fseek(arch, m * tamElem, SEEK_SET);
+
+    fread(reg, tamElem, 1, arch);
+
+    insertarEnArbol(pa, reg, tamElem, cmp, NULL);
+
+    free(reg);
+
+    cargarArbolRec(arch, pa, tamElem, cmp , li, m - 1);
+    cargarArbolRec(arch, pa, tamElem, cmp , m + 1, ls);
+
+    return TODO_OK;
 }
 
 //void crearArbol(Arbol* pa)

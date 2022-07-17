@@ -16,6 +16,7 @@
 				</Compiler>
 				<Linker>
 					<Add library="../TDAArbolImplDinamica/bin/Debug/libTDAArbolImplDinamica.a" />
+					<Add library="../TDAListaImplDinamicaDoble/bin/Debug/libTDAListaImplDinamicaDoble.a" />
 					<Add library="../Nodo/bin/Debug/libNodo.a" />
 				</Linker>
 			</Target>

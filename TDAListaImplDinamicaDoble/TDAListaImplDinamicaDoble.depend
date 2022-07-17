@@ -24,8 +24,10 @@
 	"../Comun/Comun.h"
 	<stddef.h>
 
-1655420327 source:c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.c
+1656018898 source:c:\users\usuario\desktop\proyectoscodeblocks\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.c
 	"../TDALista/TDALista.h"
+	<string.h>
+	<stdlib.h>
 
 1655416092 c:\users\usuario\desktop\proyectoscodeblocks\tdalista\tdalista.h
 	"../Comun/Comun.h"
